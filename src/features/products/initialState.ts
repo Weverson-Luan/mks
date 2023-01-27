@@ -8,9 +8,14 @@ import { IProductsState } from "./index.d";
  */
 const initialState: IProductsState = {
   products: {
-    id: "",
+    id: 0,
     name: "",
-    value: "",
+    brand: "",
+    description: "",
+    photo: "",
+    price: "",
+    createdAt: "",
+    updatedAt: "",
   },
 };
 

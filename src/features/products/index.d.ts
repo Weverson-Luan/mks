@@ -3,9 +3,14 @@
  */
 
 export interface Products {
-  id: string;
+  id: number;
   name: string;
-  value: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 /**

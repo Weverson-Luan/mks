@@ -5,7 +5,7 @@ const Container = styled.button`
   height: 32px;
   border-radius: 0px 0px 8px 8px;
   background-color: ${({ theme }) => theme.blue_100};
-
+  margin-top: auto;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -10,9 +10,10 @@ import { initialState } from "./initialState";
  */
 const productsAll = (state: any, action: any) => {
   // set state
-  state.accountId = action.payload.data.user.id;
-  state.user = action.payload.data.user;
-  state.refresh_token = action.payload.data.refresh_token;
+  state.products = action.payload.data.products;
+  // state.accountId = action.payload.data.user.id;
+  // state.user = action.payload.data.user;
+  // state.refresh_token = action.payload.data.refresh_token;
 };
 
 /**

@@ -2,33 +2,54 @@
  * IMPORTS
  */
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { ShoppingCartSimple } from "phosphor-react";
 
 // styles
-import { Container, DescProduct, Main, TitleProduct } from "./styles";
-import { Text } from "../text";
+import {
+  AlignRow,
+  Container,
+  DescProduct,
+  Main,
+  Price,
+  TitleProduct,
+} from "./styles";
+
 import { ButtonPurchase } from "../buttons/button-purchase";
+import { useAppSelector } from "@/redux/hooks/useAppSelector";
+
+interface Products {
+  id: number;
+  name: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
 const CardProduct = () => {
-  const [quantity, setQuantity] = useState(1998);
+  const { products }: any = useAppSelector(state => state.reducer);
+
   return (
     <Container>
-      <Main>
-        <img
-          src="https://m.media-amazon.com/images/I/41DD9PuKapL._AC_.jpg"
-          alt="image-product"
-        />
+      {products.products.length > 0
+        ? products?.products?.map((product: Products) => {
+            return (
+              <Main key={product.id}>
+                <img src={product.photo} alt="image-product" />
+                <AlignRow>
+                  <TitleProduct>{product.name}</TitleProduct>
+                  <Price> R${product.price}</Price>
+                </AlignRow>
+                <DescProduct>{product.description}</DescProduct>
 
-        <TitleProduct>Apple Watch Series 4 GPS</TitleProduct>
-
-        <DescProduct>
-          Redesigned from scratch and completely revised.
-        </DescProduct>
-      </Main>
-
-      <ButtonPurchase />
+                <ButtonPurchase />
+              </Main>
+            );
+          })
+        : "Carregando"}
     </Container>
   );
 };

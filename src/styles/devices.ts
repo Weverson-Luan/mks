@@ -8,7 +8,7 @@ const devices = {
   tablet: "(max-width: 768px)",
   laptop: "(max-width: 1024px)",
   laptopL: "(max-width: 1280px)",
-  desktop: "(max-width: 1366px)",
+  desktop: "(min-width:1281px)",
 };
 
 /**

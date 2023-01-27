@@ -6,13 +6,17 @@ import axios from "axios";
 import { IProductsResponse, types } from "./actions.types";
 
 /**
- * I log in an user.
+ * Get fetch products.
  */
-const productsAll = createAsyncThunk<IProductsResponse, any>(
+
+const productsAll = createAsyncThunk<IProductsResponse>(
   types.GET_ALL_PRODUCTS,
 
-  // request login
-  async () => await axios.get("http://localhost:3333/api/v1/users/auth/login")
+  // request fetch
+  async () =>
+    await axios.get(
+      `https://mks-challenge-api-frontend.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=DESC`
+    )
 );
 
 /**

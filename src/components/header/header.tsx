@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { Text } from "../text/text";
+import { Text } from "@/components/text";
 
 // svg
-import LogoSvg from "../../assets/logo.svg";
+import LogoSvg from "@/assets/logo.svg";
 
 // styles
 import { Container, WrapperImage } from "./styles";
-import { Car } from "../car";
+import { Car } from "@/components/car";
 
 const Header = () => {
   return (

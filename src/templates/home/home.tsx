@@ -4,25 +4,26 @@
 // import { useSelector } from 'react-redux';
 
 import { CardProduct } from "@/components/card-product";
-import { Header } from "@/components/header";
+import { useAppDispatch } from "@/redux/hooks/useAppDispatch";
 import { Container, ProductsFooter, WrapperProducts } from "./styles";
+import { actions as ActionsWork } from "@/features/products";
+import { useEffect } from "react";
 
 const HomeTemplate = () => {
-  // const { reducer }: any = useSelector(state => state);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    handleWork();
+  }, []);
+
+  const handleWork = async () => {
+    const responseWork = await dispatch(ActionsWork.productsAll());
+
+    return responseWork;
+  };
 
   return (
     <Container>
-      <Header />
       <WrapperProducts>
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
         <CardProduct />
       </WrapperProducts>
 

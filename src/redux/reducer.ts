@@ -2,7 +2,7 @@
  * IMPORTS
  */
 import { combineReducers } from "redux";
-import { products } from "../features/products";
+import { products } from "@/features/products";
 
 import { persistConfig, persistReducer } from "./persit";
 

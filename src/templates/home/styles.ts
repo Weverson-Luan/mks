@@ -13,7 +13,7 @@ const WrapperProducts = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 116px;
+  margin-top: 26px;
   background: transparent !important;
   padding: 24px;
 `;
