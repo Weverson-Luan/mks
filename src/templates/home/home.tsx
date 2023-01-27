@@ -7,8 +7,7 @@ import { CardProduct } from "@/components/card-product";
 import { useAppDispatch } from "@/redux/hooks/useAppDispatch";
 import { Container, ProductsFooter, WrapperProducts } from "./styles";
 import { actions as ActionsWork } from "@/features/products";
-import { useEffect, useState } from "react";
-import { useAppSelector } from "@/redux/hooks/useAppSelector";
+import { useEffect } from "react";
 
 const HomeTemplate = () => {
   const dispatch = useAppDispatch();
